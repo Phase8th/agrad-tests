@@ -1,0 +1,14 @@
+{
+  "name": "autograd-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for Autograd website",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  }
+} 
