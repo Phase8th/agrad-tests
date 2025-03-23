@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - cicd-adjustments
   pull_request:
     branches:
       - main
+      - cicd-adjustments
 
 jobs:
   test:

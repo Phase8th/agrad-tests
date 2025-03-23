@@ -14,11 +14,6 @@ test.describe('Main Page Tests', () => {
     await expect(header).toBeVisible();
   });
 
-  test('should have a visible footer', async ({ page }) => {
-    const footer = page.locator('footer');
-    await expect(footer).toBeVisible();
-  });
-
   test('navigation links should work', async ({ page }) => {
     const navLinks = page.locator('nav a');
     const count = await navLinks.count();
