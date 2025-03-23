@@ -25,4 +25,19 @@ test.describe('Main Page Tests', () => {
       await page.goBack();
     }
   });
+
+  test('should receive a successful HTTP response', async ({ page }) => {
+    // Intercept the network request
+    page.on('response', async (response) => {
+      if (response.url().includes('api/endpoint')) { // Replace with the actual endpoint you want to test
+        expect(response.status()).toBe(200); // Check for a successful status code
+        const responseBody = await response.json();
+        // Add more assertions based on the expected response body
+        expect(responseBody).toHaveProperty('key', 'expectedValue'); // Example assertion
+      }
+    });
+
+    // Navigate to the page that triggers the request
+    await page.goto('https://agrad.ru/');
+  });
 }); 
