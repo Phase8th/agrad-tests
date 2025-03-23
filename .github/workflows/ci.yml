@@ -23,10 +23,19 @@ jobs:
       with:
         node-version: '16'
 
+    - name: Check Node.js and npm version
+      run: |
+        node -v
+        npm -v
+
     - name: Install dependencies
       run: npm install
 
+    - name: Set permissions for node_modules
+      run: chmod -R 755 node_modules
+
     - name: Install Playwright browsers
+      shell: bash
       run: npx playwright install
 
     - name: Run Playwright tests
