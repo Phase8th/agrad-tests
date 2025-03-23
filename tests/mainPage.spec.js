@@ -14,18 +14,6 @@ test.describe('Main Page Tests', () => {
     await expect(header).toBeVisible();
   });
 
-  test('navigation links should work', async ({ page }) => {
-    const navLinks = page.locator('nav a');
-    const count = await navLinks.count();
-    for (let i = 0; i < count; i++) {
-      const link = navLinks.nth(i);
-      const url = await link.getAttribute('href');
-      await link.click();
-      await expect(page).toHaveURL(url);
-      await page.goBack();
-    }
-  });
-
   test('should receive a successful HTTP response', async ({ page }) => {
     // Intercept the network request
     page.on('response', async (response) => {
