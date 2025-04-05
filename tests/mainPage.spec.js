@@ -14,7 +14,7 @@ test.describe('Main Page Tests', () => {
     await expect(header).toBeVisible();
   });
 
-  test('should receive a successful HTTP response', async ({ page }) => {
+  test('should receive a successful HTTPS response', async ({ page }) => {
     // Intercept the network request
     page.on('response', async (response) => {
       if (response.url().includes('api/endpoint')) { // Replace with the actual endpoint you want to test
